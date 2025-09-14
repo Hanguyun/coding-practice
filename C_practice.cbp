@@ -31,7 +31,10 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
-		<Unit filename="main.c">
+		<Unit filename="C_20250913_1-1.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="C_20250913_1-2.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Extensions />

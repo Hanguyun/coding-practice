@@ -1,4 +1,4 @@
-#include<stdio.h> // 사용자로부터 정수 5개를 입력받아 가장 큰 수와 가장 작은 수를 출력하는 프로그램을 작성하세요.
+/*#include<stdio.h> // 사용자로부터 정수 5개를 입력받아 가장 큰 수와 가장 작은 수를 출력하는 프로그램을 작성하세요.
 
 int main(void) {
     int a, b, c, d, e;
@@ -24,4 +24,4 @@ int main(void) {
 
 
     return 0;
-}
+} */
