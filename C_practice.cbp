@@ -31,19 +31,25 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
-		<Unit filename="C_20250913_1-1.c">
+		<Unit filename="C_Day1_1.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="C_20250913_1-2.c">
+		<Unit filename="C_Day1_2.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="C_20250914_1-1.c">
+		<Unit filename="C_Day2_1.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="C_20250914_1-2.c">
+		<Unit filename="C_Day2_2.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="C_20250914_1-3.c">
+		<Unit filename="C_Day2_3.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="C_Day4_1.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="C_Day4_2.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Extensions />
