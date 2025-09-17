@@ -76,9 +76,9 @@ for (int i = 1; i <= n; i++) {
 > 
 
 | **OS/모델**                | **short** | **int** | **long** | **long long** | **float** | **double** |
-| ---                             | ---          | ---      | ---         |                --- | ---        |             --- |
-| **Windows(LLP64)**     | 2            | 4        | 4          | 8                  | 4           | 8              |
-| **Linux/macOS(LP64)** | 2            | 4        | 8           | 8                  | 4          | 8              |
+| ---                       | ---       | ---      | ---     |           --- | ---        |        --- |
+| **Windows(LLP64)**        | 2         | 4        | 4       | 8             | 4          | 8          |
+| **Linux/macOS(LP64)**     | 2         | 4        | 8       | 8             | 4          | 8          |
 
 ---
 
@@ -280,3 +280,14 @@ int main(void) {
 ---
 
 ## 12-7) 문자와 아스키
+#include <stdio.h>
+
+int main(void) {
+    int i = 65;     // 'A'
+    char c = 'a';   // 97
+    printf("%c....%c....%c\n", i, c, c+2); // A....a....c
+
+    // 숫자(코드값)도 보고 싶다면:
+    printf("%d....%d....%d\n", i, c, c+2); // 65....97....99
+    return 0;
+}
