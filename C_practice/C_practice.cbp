@@ -31,7 +31,22 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
-		<Unit filename="C_Day10_1.c">
+		<Unit filename="C_Day10~.c">
+			<Option compilerVar="CC" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="C_Day11_1.c">
+			<Option compilerVar="CC" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="C_Day11_2.c">
+			<Option compilerVar="CC" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="C_Day11_3.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="C_Day12_1.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="C_Day1_1.c">

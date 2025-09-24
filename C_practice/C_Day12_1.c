@@ -45,27 +45,22 @@ Polynomial sub(Polynomial a, Polynomial b)                                      
                       - ((i <= b.degree) ? b.coef[i] : 0);
     return p;
 }
-Polynomial mult(Polynomial a, Polynomial b)                                      // 2번
+Polynomial mult(Polynomial a, Polynomial b)                                      // 2번 //3번
 {
     Polynomial p;
-     p.degree = (a.degree > 0) ? a.degree : b.degree;
+    int i, j;
 
-    for (int i = 0; i <= p.degree; i++)
-        p.coef[i] = ((i <= a.degree) ? a.coef[i] : 0)
-                      + ((i <= b.degree) ? b.coef[i] : 0);
+    for (i = 0; i < a.degree + b.degree + 1; i++) {
+        p.degree = a.degree + b.degree;
+    }
+    for (i = 0; i < a.degree + 1; i++) {
+        for (j = 0; j < b.degree + 1; j++) {
+            p.coef[i + j] += a.coef[i] * b.coef[j];
+        }
+    }
     return p;
 }
 
-Polynomial mult2(Polynomial a, Polynomial b)                                      // 3번
-{
-    Polynomial p;
-     p.degree = (a.degree > 0) ? a.degree : b.degree;
-
-    for (int i = 0; i <= p.degree; i++)
-        p.coef[i] = ((i <= a.degree) ? a.coef[i] : 0)
-                      + ((i <= b.degree) ? b.coef[i] : 0);
-    return p;
-}
 
 void print_poly(Polynomial p, char str[])
 {
@@ -79,8 +74,10 @@ void print_poly2(Polynomial p, char str[])
 {
     printf(" %s", str);
     for (int i = p.degree; i > 0; i--)
+         if(p.coef[i] != 0)
         printf("%5.1f x^%d + ", p.coef[i], i);
     printf("%4.1f\n", p.coef[0]);
+
 }
 
 void main()
@@ -90,13 +87,12 @@ void main()
     Polynomial c = add(a, b);
     Polynomial d = sub(a, b);
     Polynomial e = mult(a, b);
-    Polynomial f = mult(a, b);
     print_poly(a, " A = ");
     print_poly(b, " B = ");
     print_poly(c, "A+B = ");
     print_poly(d, "1번 문제 A-B = ");
-    print_poly(e, "2번 문제 A*B = ");
-    print_poly2(f, "3번 문제 출력 개선 A*B =");
+    print_poly2(e, "2, 3번 문제 A*B = ");
     printf("A(1)= %f\n", evaluate(a, 1.0f));
     printf("B(2)= %f\n", evaluate(b, 2.0f));
 }*/
+
