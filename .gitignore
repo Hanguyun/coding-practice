@@ -1,0 +1,18 @@
+# Unreal Engine generated stuff
+Unreal/**/Binaries/
+Unreal/**/DerivedDataCache/
+Unreal/**/Intermediate/
+Unreal/**/Saved/
+Unreal/**/__ExternalActors__/
+Unreal/**/__ExternalObjects__/
+Unreal/**/.vs/
+Unreal/**/StarterContent/
+
+# Code::Blocks, build artifacts
+C_practice/obj/
+C_practice/bin/
+*.o
+*.exe
+
+# common junk
+*.log
