@@ -31,6 +31,9 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="ArrayStack.h">
+			<Option target="Release" />
+		</Unit>
 		<Unit filename="C_Day10~.c">
 			<Option compilerVar="CC" />
 			<Option target="Release" />
@@ -56,6 +59,13 @@
 			<Option target="Release" />
 		</Unit>
 		<Unit filename="C_Day15_1.c">
+			<Option compilerVar="CC" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="C_Day16_1.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="C_Day16_2.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="C_Day1_1.c">
