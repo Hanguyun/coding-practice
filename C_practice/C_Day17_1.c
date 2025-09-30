@@ -5,6 +5,8 @@
 typedef char Element;
 #include "ArrayStack.h"
 
+int check_matching(char filename[]);   //1번
+
 int check_matching(char expr[])
 {
     int i = 0, prev;
@@ -29,8 +31,20 @@ int check_matching(char expr[])
     else return 0;
 }
 
-void main()
+int main()
 {
+    FILE *fp = NULL;
+    char line[1000];
+    fp = fopen("ArrayStack.h", "r");
+    if (fp == NULL) {
+            printf("파일을 열 수 없습니다.");
+    return 5;
+    }
+    while (fgets(line, sizeof(line), fp) != NULL) {
+        printf("%s", line);
+    }
+    fclose(fp);
+    printf("\n\n\n");
     char expr[4][80] = {
         "{A[(i+1)]=0;}",
         "if((i==0) && (j==0)",
