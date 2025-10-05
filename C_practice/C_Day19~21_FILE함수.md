@@ -80,14 +80,20 @@ int main() {
     char str[1024] = { 0 };
 
     fp = fopen("C_Day18_2_test_data.txt", "rt");
-    while (!feof(fp)) {
-        fscanf(fp, "%s", str);
-
-        if (bracket_checker(str))
-            printf("%s 괄호 검사 성공 \n", str);
-        else
-            printf("%s 괄호 검사 실패 \n", str);
+    if (fp == NULL) {
+        printf("파일을 열 수 없습니다.\n");
+        return 1;
     }
+
+    while (fscanf(fp, "%s", str) != EOF) {
+        if (bracket_checker(str))
+            printf("%s 괄호 검사 성공\n", str);
+        else
+            printf("%s 괄호 검사 실패\n", str);
+    }
+
+    fclose(fp);
+    return 0;
 }
 ```
 
@@ -326,3 +332,126 @@ element peek(StackType* s) {
 - 차이점: pop()과 달리 top 값을 줄이지 않음 → 즉, 스택에서 꺼내지 않고 그냥 확인만 함.
 
 ---
+
+### 5-7.  괄호 검사 함수
+
+```jsx
+int bracket_checker(char* exp) {
+	StackType s;
+	char ch, open_ch;
+	
+	int len = strlen(exp);
+	init_stack(&s);
+	
+	for (int i = 0; i < len; i ++) {
+		ch = exp[i];
+		
+	switch (ch) {
+	case '(': case '[': case '{':
+		push(&s, ch);
+		break;
+		
+	case ')': case']': case '}':
+		if (is_empty(&s)) return 0;
+		else {
+					open_ch = pop(&s);
+					if ((open_ch == '(' && ch != ')') || (open_ch == '[' && ch != ']') || (open_ch == '{' && ch != '}'))
+						return 0;
+						break;
+				}
+		}
+}
+if (!is_empty(&s)) return 0;
+return 1;
+}
+```
+
+> 이 함수는 문자열을 왼쪽부터 읽으며 괄호를 스택에 쌓고, 닫는 괄호가 나올 때마다 짝이 맞는지 검사한다. 모든 짝이 정확하면 1, 하나라도 틀리면 0.
+> 
+
+- bracket_checker 함수는 괄호가 올바르게 닫혀 있는지 검사하는 함수
+- 매개변수 char* exp : 검사할 문자열(괄호가 포함된 수식 등).
+- 반환형 int
+    - 올바르면 1
+    - 잘못됐으면 0
+
+- StackType s : 스택 구조체 변수 선언 (괄호를 저장하는 용도)
+- ch : 문자열에서 현재 읽고 있는 문자
+- open_ch : 스택에서 꺼낸 ‘열린 괄호’
+
+- len : 문자열의 전체 길이(strlen)
+- init_stack(&s) : 스택 초기화 (비어있는 상태로 만듦)
+
+- for → 문자열의 첫 글자부터 끝까지 하나씩 ch에 저장하면서 검사.
+- switch (ch) → 현재 문자가 어떤 괄호인지에 따라 다른 동작을 함.
+- case '(' : case '[' : case '{' :
+push(&s, ch);
+break;
+    - (, [, { 중 하나라면 스택에 푸시(push)
+    
+    → 나중에 닫는 괄호가 나왔을 때 비교하기 위해 저장해둠.
+    
+- case ')' : case ']' : case '}' :
+if (is_empty(&s)) return 0;
+    - 닫는 괄호가 나왔는데 스택이 비어 있으면 → 짝이 맞지 않음 → 0 반환 (실패)
+
+- else → 스택에서 마지막으로 저장된 열린 괄호(open_ch) 꺼냄
+- 괄호 짝이 안 맞으면 → 잘못된 괄호이므로 0 반환
+    - ex) ‘(’가 들어있는데 ‘]’가 나오면 실패
+- 괄호가 맞으면 아무 일 없이 break (다음 문자 검사 계속)
+
+- if (!is_empty(&s)) return 0;
+    - 모든 문자를 다 읽은 뒤에도 스택이 비어있지 않다면
+        - 열린 괄호가 닫히지 않았다는 뜻
+        - 실패 (0 반환)
+- return 1;
+    - 아무 문제 없으면 괄호가 모두 짝이 잘 맞았다는 뜻 → 성공 (1 반환)
+
+---
+
+### 6. main 괄호 검사를 수행하는 코드
+
+```jsx
+int main() {
+    FILE* fp;
+    char str[1024] = { 0 };
+
+    fp = fopen("C_Day18_2_test_data.txt", "rt");
+    if (fp == NULL) {
+        printf("파일을 열 수 없습니다.\n");
+        return 1;
+    }
+
+    while (fscanf(fp, "%s", str) != EOF) {
+        if (bracket_checker(str))
+            printf("%s 괄호 검사 성공\n", str);
+        else
+            printf("%s 괄호 검사 실패\n", str);
+    }
+
+    fclose(fp);
+    return 0;
+}
+```
+
+- fp = fopen(”C_Day18_2_test_data.txt”, “rt”);
+    - “rt” 는 읽기(read) 모드 + 텍스트(text)”를 의미.
+    - 파일을 열 수 없으면 fp == NULL 이 되기 때문에 바로 확인
+
+- if → 파일이 존재하지 않거나 경로가 틀리면 오류 메세지를 출력하고 프로그램 종료.
+
+- while → 파일 읽기
+    - fscanf()는 공백(띄어쓰기, 줄바꿈) 기준으로 한 단어씩 읽는다.
+    - EOF는 End Of File(파일의 끝) — 더 이상 읽을 게 없으면 종료.
+    - 이 방식은 while (!feof(fp)) 보다 안전하고 표준적이다.
+- if (bracket_checker(str))
+            printf("%s 괄호 검사 성공\n", str);
+        else
+            printf("%s 괄호 검사 실패\n", str);
+    - 파일에서 읽은 문자열(str)을 bracket_checker() 함수에 넘긴다.
+    - 그 결과가 1이면 성공, 0이면 실패
+
+- fclose(fp);
+    - 파일을 다 쓰면 반드시 닫는다.
+    
+    → 안 닫으면 다른 프로그램이 그 파일에 접근하지 못할 수도 있다.
