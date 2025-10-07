@@ -1,6 +1,6 @@
 import random
 
-C = random.sample(range(1, 51), k=10)  # 1~50 중 중복 없이 10개
+C = random.sample(range(1, 51), k=10)
 even = []
 odd = []
 
