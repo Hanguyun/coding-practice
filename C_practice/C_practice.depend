@@ -90,7 +90,7 @@
 	<stdlib.h>
 	"ArrayStack.h"
 
-1759137253 d:\coding-practice\c_practice\arraystack.h
+1759751297 d:\coding-practice\c_practice\arraystack.h
 
 1759226842 source:d:\coding-practice\c_practice\c_day16_2.c
 	<stdio.h>
@@ -105,4 +105,14 @@
 1759398798 source:d:\coding-practice\c_practice\c_day18_2.c
 	<stdio.h>
 	<string.h>
+
+1759885202 source:d:\coding-practice\c_practice\c_day22_check_matching.c
+	<stdio.h>
+	<stdlib.h>
+	"ArrayStack.h"
+
+1759885658 source:d:\coding-practice\c_practice\c_day22_1.c
+	<stdio.h>
+	<stdlib.h>
+	"ArrayStack.h"
 
