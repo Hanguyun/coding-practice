@@ -92,10 +92,14 @@
 		</Unit>
 		<Unit filename="C_Day22_1.c">
 			<Option compilerVar="CC" />
+			<Option target="Release" />
 		</Unit>
 		<Unit filename="C_Day22_check_matching.c">
 			<Option compilerVar="CC" />
 			<Option target="Release" />
+		</Unit>
+		<Unit filename="C_Day23_1.c">
+			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="C_Day2_1.c">
 			<Option compilerVar="CC" />
