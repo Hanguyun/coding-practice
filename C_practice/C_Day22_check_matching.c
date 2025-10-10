@@ -12,6 +12,7 @@ int check_matching(char expr[])
     init_stack();
     while (expr[i] != '\0') {
         char ch = expr[i++];
+        if
         if (ch == '[' || ch == '(' || ch == '{')
                 push(ch);
         else if (ch == ']' || ch == ')' || ch == '}') {
