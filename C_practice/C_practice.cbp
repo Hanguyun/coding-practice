@@ -104,6 +104,14 @@
 		</Unit>
 		<Unit filename="C_Day24_1.c">
 			<Option compilerVar="CC" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="C_Day25_1.c">
+			<Option compilerVar="CC" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="C_Day25_2.c">
+			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="C_Day2_1.c">
 			<Option compilerVar="CC" />
