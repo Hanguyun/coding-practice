@@ -112,6 +112,10 @@
 		</Unit>
 		<Unit filename="C_Day25_2.c">
 			<Option compilerVar="CC" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="C_Day26_1.c">
+			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="C_Day2_1.c">
 			<Option compilerVar="CC" />
@@ -152,6 +156,11 @@
 		<Unit filename="C_Day8_2.c">
 			<Option compilerVar="CC" />
 			<Option target="Release" />
+		</Unit>
+		<Unit filename="CircularQueue.h" />
+		<Unit filename="QueueStruct.h" />
+		<Unit filename="waiting_queue_v3.c">
+			<Option compilerVar="CC" />
 		</Unit>
 		<Extensions />
 	</Project>
