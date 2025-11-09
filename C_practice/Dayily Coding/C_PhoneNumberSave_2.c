@@ -11,7 +11,6 @@ typedef struct PhoneNumberSave {                // ±∏¡∂√º ¡§¿« ¿˙¿Âµ… ¿Ã∏ß∞˙ ¿¸»
 int main(void) {
     int count;                      // πÿø° whileπÆø°º≠ ∫¸¡Æ≥™ø¿±‚ ¿ß«— ∫Øºˆ ¡ˆ¡§.
     int counting = 0;          // πÿø° whileπÆø°º≠ ∫¸¡Æ≥™ø¿±‚ ¿ß«— ∫Øºˆ ¡ˆ¡§.
-    int id = 1;                     // √‚∑¬ π¯»£
     Element temp;
 
     init_queue();                  // ≈• √ ±‚»≠.
@@ -34,17 +33,18 @@ int main(void) {
     if (!is_empty()) { // ∫ÒæÓ¿÷¡ˆ æ ¥Ÿ∏È
         Node* p = rear->link; // ∏« æ’ø°º≠∫Œ≈Õ Ω√¿€
 
-        printf("[%d]\t%s\t%s\n", id, p->data.name, p->data.number); // √≥¿Ω ªÁ∂˜ ¡§∫∏ √‚∑¬«œ∞Ì
-        id++; // π¯»£ ¡ı∞°
+        printf("%s\t%s\n", p->data.name, p->data.number); // √≥¿Ω ªÁ∂˜ ¡§∫∏ √‚∑¬«œ∞Ì
         p = p->link; // ¥Ÿ¿Ω ªÁ∂˜¿∏∑Œ ¿Ãµø
 
 
-        while (p != rear->link) { // rear∞° ∞°∏Æ≈∞¥¬ link¥¬ ∏« æ’¿ª ∞°∏£≈¥ ±◊∑°º≠ p != rear->link∏È æ’¿Ã æ∆¥œ∏È¿Ã º∫∏≥.
-            printf("[%d]\t%s\t%s\n", id, p->data.name, p->data.number); // p∞° ∞°∏£≈∞¥¬ data.name ∞˙ data.number∏¶ √‚∑¬«œ∞Ì
-            id++; // π¯»£ ¡ı∞°
+        for (Node *p = rear->link; p != rear; p = p -> link) { // rear∞° ∞°∏Æ≈∞¥¬ link¥¬ ∏« æ’¿ª ∞°∏£≈¥ ±◊∑°º≠ p != rear->link∏È æ’¿Ã æ∆¥œ∏È¿Ã º∫∏≥.
+            printf("%s\t%s\n", p->data.name, p->data.number); // p∞° ∞°∏£≈∞¥¬ data.name ∞˙ data.number∏¶ √‚∑¬«œ∞Ì
             p = p->link; // ¥Ÿ¿Ω¿∏∑Œ ¿Ãµø
+            if (is_empty())
+                break;
         }
     }
 
     return 0;
 }
+

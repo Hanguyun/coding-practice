@@ -4,7 +4,7 @@
 
 #define MAX_SIZE 100
 
-struct Waiting {
+typedef struct Waiting {
     int id;
     int nperson;
     char info[32];

@@ -10,7 +10,7 @@ void main(){
     int loc;
 
     while(1){
-        printf("1.삽입  2.추가  3.삭제  4.처음부터 찾기  5.특정 위치 이후 찾기 6. 6.인쇄  7.종료    :");
+        printf("1.삽입  2.추가  3.삭제  4.처음부터 찾기  5.특정 위치 이후 찾기 6.찾는 값과 값의 개수 7.인쇄  8.종료    :");
         scanf("%d", &menu);
         switch(menu){
         case 1: printf("삽입할 위치:");
@@ -42,13 +42,18 @@ void main(){
                     loc = find2(loc, temp);
                     printf("값(%d)는 %d 위치에 있습니다.\n");
                     break;
-        case 6: printf("리스트에 저장된 값 목록: ");
-                    for(int i=0; i < size; i++){
-                        printf("%3d", get_entry(i));
-                    }
-                    printf("\n");
+        case 6:printf("찾는 값:");
+                    scanf("%d", &temp);
+                    printf("찾는 위치:");
+                    scanf("%d", &loc);
+                    loc = find2(loc, temp);
+                    printf("값(%d)는 %d 위치에 있습니다.\n");
                     break;
-        case 7: printf("프로그램을 종료합니다.\n");
+        case 7:printf("찾는 값:");
+                    scanf("%d", &temp);
+                    printf("값(%d)는 %d 위치에 있습니다.\n");
+                    break;
+        case 8: printf("프로그램을 종료합니다.\n");
                     exit(0);
         default :
             printf("잘못된 입력입니다.");

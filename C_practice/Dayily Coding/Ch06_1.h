@@ -1,5 +1,6 @@
 Element data[MAX_SIZE];
 int size = 0;
+int sum = 0;
 
 void error(char str[])
 {
@@ -76,5 +77,13 @@ int find2(int start, Element e) {
     for(int i = start; i < size; i++)
         if (data[i] == e)
             return i;
+    return -1;
+}
+
+int count(Element e) {
+    for(int i = 0; i < size; i++)
+        if (data[i] == e)
+            sum += i
+            return sum;
     return -1;
 }
