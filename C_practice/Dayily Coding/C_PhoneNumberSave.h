@@ -1,3 +1,4 @@
+
 typedef struct Node {
     Element data;
     struct Node* link;

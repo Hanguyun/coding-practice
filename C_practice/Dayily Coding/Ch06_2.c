@@ -10,7 +10,7 @@ void main(){
     int loc;
 
     while(1){
-        printf("1.삽입  2.추가  3.삭제  4.처음부터 찾기  5.특정 위치 이후 찾기  6.인쇄  7.종료    :");
+        printf("1.삽입  2.추가  3.삭제  4.처음부터 찾기  5.특정 위치 이후 찾기 6. 6.인쇄  7.종료    :");
         scanf("%d", &menu);
         switch(menu){
         case 1: printf("삽입할 위치:");

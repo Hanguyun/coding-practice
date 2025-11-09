@@ -132,3 +132,18 @@
 	<stdio.h>
 	<stdlib.h>
 
+1762694983 source:d:\coding-practice\c_practice\dayily coding\c_day31_1_test.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"CircularQueue.h"
+
+1762687526 d:\coding-practice\c_practice\dayily coding\circularqueue.h
+
+1762693970 source:d:\coding-practice\c_practice\dayily coding\circularlinkedqueue.c
+	<stdio.h>
+	<stdlib.h>
+	"CircularLinkedQueue.h"
+
+1762693794 d:\coding-practice\c_practice\dayily coding\circularlinkedqueue.h
+

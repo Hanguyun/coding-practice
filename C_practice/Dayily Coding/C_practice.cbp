@@ -58,6 +58,9 @@
 			<Option compilerVar="CC" />
 			<Option target="Release" />
 		</Unit>
+		<Unit filename="C_Day14.md">
+			<Option target="Release" />
+		</Unit>
 		<Unit filename="C_Day15_1.c">
 			<Option compilerVar="CC" />
 			<Option target="Release" />
@@ -160,6 +163,7 @@
 		</Unit>
 		<Unit filename="C_Day32_1.c">
 			<Option compilerVar="CC" />
+			<Option target="Release" />
 		</Unit>
 		<Unit filename="C_Day4_1.c">
 			<Option compilerVar="CC" />
@@ -187,6 +191,35 @@
 		</Unit>
 		<Unit filename="C_Day8_2.c">
 			<Option compilerVar="CC" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="C_PhoneNumberSave.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="C_PhoneNumberSave.h">
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="C_practice.cbp">
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="C_practice.depend">
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="C_practice.layout">
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="Ch06_1.h">
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="Ch06_2.c">
+			<Option compilerVar="CC" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="CircularLinkedQueue.c">
+			<Option compilerVar="CC" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="CircularLinkedQueue.h">
 			<Option target="Release" />
 		</Unit>
 		<Unit filename="CircularQueue.h">

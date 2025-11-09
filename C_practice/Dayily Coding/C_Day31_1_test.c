@@ -10,7 +10,7 @@ struct Waiting {
     char info[32];
 };
 typedef struct Waiting Element;
-#include "CircularQ.h"
+#include "CircularQueue.h"
 int waiting_id = 1;
 
 void inputing() {

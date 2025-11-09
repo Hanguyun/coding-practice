@@ -18,7 +18,7 @@ int main(void) {
 
     printf("큐에 저장된 값 목록: ");
     Node* p = rear -> link;
-    for (int i = 1; i <= size(); i++) {
+    while (p != rear->link) {
         printf("%3d", p->data);
         p = p -> link;
     }
