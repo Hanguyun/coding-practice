@@ -47,7 +47,7 @@ public class BlackjackGame {
     }
 
     if (userCount.contains("J")) {
-
+            // 일단 J, Q, K가 있는지 확인하고 삭제 후 추가
     }
 
         System.out.println("당신의 패는" + user +"점수는"+ userCount +"입니다.");
