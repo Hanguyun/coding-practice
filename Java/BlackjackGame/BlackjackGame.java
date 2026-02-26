@@ -38,11 +38,18 @@ public class BlackjackGame {
 
     List<Object> user = new ArrayList<>(); // user 덱에 삽입할 카드를 위해 user List 생성
 
+    List<Object> userCount = new ArrayList<>(); // user의 덱의 점수를 계산하기 위해 userCount List 생성
+
     for (int i = 0; i < 2; i++) {
         Object PickedUser = card.get(r.nextInt(card.size())); // card에서 랜덤 인덱스 위치의 원소를 가져와서 변수 PickedUser에 저장
         user.add(PickedUser); // 위에 만들었던 변수 PickedUser에 저장되어 있는 카드를 저장
+        user.add(PickedUser); // 위에 만들었던 변수 PickedUser에 저잗되어 있는 카드를 저장
     }
 
-    System.out.println("당신의 패는" + user + "입니다.");
+    if (userCount.contains("J")) {
+
+    }
+
+        System.out.println("당신의 패는" + user +"점수는"+ userCount +"입니다.");
     }
 }
