@@ -24,12 +24,25 @@ public class BlackjackGame {
 
     Collections.shuffle(card); // List card를 셔플
 
-    List<Object> ai = new ArrayList<>();
-    ai.add();
+    Random r = new Random(); // 난수를 만들어주는 객체 r 생성
+    Object PickedAi = card.get(r.nextInt(card.size()));
+    // card.size() card에 들어있는 원소 개수. 예를 들어 10개면 size()는 10.
+    // r.nextInt(card.size(()) 0 이상 ~ card.size()-1 이하 범위의 랜덤 정수 1개를 생성. 예) size가 10이면 0~9 중 하나.
+    // card.get(랜덤인덱스) card에 랜덤 인덱스 위치의 원소를 가져옴.
+    // Object PickedAi = ... 뽑힌 값을 PickedAi에 저장.
 
-    List<Object> user = new ArrayList<>();
+    List<Object> ai = new ArrayList<>(); // ai 덱에 삽입할 카드를 위해 ai List 생성
+    ai.add(PickedAi); // 위에 만들었던 변수 PickedAi에 저장되어 있는 카드를 저장
 
+    System.out.println("AI의 패 중 하나는" + ai + "입니다.");
 
-    System.out.println(card);
+    List<Object> user = new ArrayList<>(); // user 덱에 삽입할 카드를 위해 user List 생성
+
+    for (int i = 0; i < 2; i++) {
+        Object PickedUser = card.get(r.nextInt(card.size())); // card에서 랜덤 인덱스 위치의 원소를 가져와서 변수 PickedUser에 저장
+        user.add(PickedUser); // 위에 만들었던 변수 PickedUser에 저장되어 있는 카드를 저장
+    }
+
+    System.out.println("당신의 패는" + user + "입니다.");
     }
 }
