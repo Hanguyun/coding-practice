@@ -1,6 +1,14 @@
 package BlackjackGame;
 
 import java.util.*;
+import java.util.Scanner;
+
+public static int userSum(List<Object> userCount) {
+    return userCount.stream()
+            .mapToInt(Object::IntValue)
+            .sum();
+
+}
 
 public class BlackjackGame {
     public static void main(String[] args) {
@@ -43,11 +51,41 @@ public class BlackjackGame {
     for (int i = 0; i < 2; i++) {
         Object PickedUser = card.get(r.nextInt(card.size())); // card에서 랜덤 인덱스 위치의 원소를 가져와서 변수 PickedUser에 저장
         user.add(PickedUser); // 위에 만들었던 변수 PickedUser에 저장되어 있는 카드를 저장
-        user.add(PickedUser); // 위에 만들었던 변수 PickedUser에 저잗되어 있는 카드를 저장
+        userCount.add(PickedUser); // 위에 만들었던 변수 PickedUser에 저잗되어 있는 카드를 저장
     }
 
-    if (userCount.contains("J")) {
-            // 일단 J, Q, K가 있는지 확인하고 삭제 후 추가
+    Scanner sc = new Scanner(System.in); // A가 1 or 10으로 변한하기 위해 사용자에게 입력 받을 Scanner 객체 생성
+
+    for (int i = 0; i < 2; ++i) { // A가 두 개가 나올 수 있으니 for문으로 두 번 실행
+        if (user.contains("A")) { // user 패에 A가 뽑히면 조건 실행
+            System.out.print("A가 뽑혔습니다. 숫자를 선택하세요 1 or 10 :");
+            int Achoice = sc.nextInt(); // 사용자에게 입력 받기
+
+            if (Achoice == 1) {
+                user.remove("A");
+                user.add(1);
+                userCount.remove("A");
+                userCount.add(1);
+            } else {
+                user.remove("A");
+                user.add(10);
+                userCount.remove("A");
+                userCount.add(10);
+            }
+        }
+    }
+
+    for (int i = 0; i < 2; ++i) { // J,Q,K가 두 개가 나올 수 있으니 for문으로 두 번 실행
+        if (userCount.contains("J")) { // userCount에 J,Q,K가 있으면 삭제하고 10 추가
+            userCount.remove("J");
+            userCount.add(10);
+        } else if (userCount.contains("Q")) {
+            userCount.remove("Q");
+            userCount.add(10);
+        } else if (userCount.contains("K")) {
+            userCount.remove("K");
+            userCount.add(10);
+        }
     }
 
         System.out.println("당신의 패는" + user +"점수는"+ userCount +"입니다.");
