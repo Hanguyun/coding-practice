@@ -162,7 +162,7 @@ public class Blackjack3 {
 			}
 // ------------------------------------AI 작동 로직----------------------------------------			
 			if(!userBust) {
-				while(aiSum < 17) {
+				while(aiSum <= 17) {
 					aiPick = card.get(r.nextInt(card.size()));
 					
 					if (aiPick.equals("A")) { // aiPick이 A라면 실행
@@ -190,7 +190,6 @@ public class Blackjack3 {
 						aiBust = true;
 						break;
 					}
-					else if(aiSum >= 17) {break;}
 				}
 			}
 // -----------------------------------승부 판정-----------------------------------------
