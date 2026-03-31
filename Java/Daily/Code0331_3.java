@@ -12,7 +12,10 @@ public class Code0331_3 {
 		int num2 = Integer.parseInt(args[1]);
 			divide(num1, num2);
 		} catch(ArithmeticException e) {
-			System.out.println("0으로 나눌 수 없습니다.");			
+			System.out.println("0으로 나눌 수 없습니다.");
+			System.out.println(e.getMessage());
+			System.out.println(e.toString());
+			e.printStackTrace();
 		} catch(ArrayIndexOutOfBoundsException e) {
 			System.out.println("인자값이 없습니다.");
 		}
