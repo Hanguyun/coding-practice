@@ -4,7 +4,8 @@ import java.util.Scanner;
 public class Blackjack3 {
 	static Scanner sc = new Scanner(System.in); // 사용자에게 입력 받을 Scanner 객체 생성
 	
-	static List<String> card = new ArrayList<>(); // 기본 카드를 리스트로 세팅
+	static List<String> card =
+			new ArrayList<>(Arrays.asList("A","2","3","4","5","6","7","8","9","10","J","Q","K")); // 기본 카드를 리스트로 세팅
 	
 	static List<String> ai = new ArrayList<>(); // ai 패를 담을 리스트 생성
 	static int aiSum = 0; // ai 합계를 담을 변수 생성
@@ -86,20 +87,6 @@ public class Blackjack3 {
 	}
 	
 	public static void main(String[] args) {
-		card.add("A");
-		card.add("2");
-		card.add("3");
-		card.add("4");
-		card.add("5");
-		card.add("6");
-		card.add("7");
-		card.add("8");
-		card.add("9");
-		card.add("10");
-		card.add("J");
-		card.add("Q");
-		card.add("K");
-		
 		while(true) {
 			System.out.println("게임을 시작합니다.");
 			System.out.println("--------------------------------------------------");
@@ -141,6 +128,7 @@ public class Blackjack3 {
 						userPick = card.get(card.size()-1);
 						
 						applyUserCard();
+						
 						
 						if (userSum >= 22) { // userSum을 비교하여 22 이상이라면 패배
 							System.out.println("21을 초과하였습니다. 패배!");
