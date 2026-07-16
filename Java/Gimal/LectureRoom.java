@@ -1,6 +1,6 @@
 package Gimal;
 
-public class LectureRoom implements Reservable {
+public abstract class LectureRoom implements Reservable {
 	private String roomNo;
 	private int capacity;
 	private String location;

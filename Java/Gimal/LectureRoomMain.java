@@ -9,7 +9,7 @@ public class LectureRoomMain {
 	public static void main(String[] args) {
 		roomList.add(new TheoryRoom("A101", 40, "1대학관", "IT학과"));
 		roomList.add(new TheoryRoom("B201", 30, "2대학관", "기계학과"));
-		roomList.add(new TheoryRoom("LAB301", 30, "3대학관", "IT학과", "프로그래밍 실습", "PC 30대"));
+		roomList.add(new PracticeRoom("LAB301", 30, "3대학관", "IT학과", "프로그래밍 실습", "PC 30대"));
 
 		while(true) {
 			System.out.println("\n===== 강의실 관리 프로그램 =====");
@@ -22,8 +22,8 @@ public class LectureRoomMain {
 			System.out.println("7. 종료");
 			System.out.print("메뉴 선택:");
 			
-		int meun = Integer.parseInt(sc.nextLine());
-		switch (meun) {
+		int menu = Integer.parseInt(sc.nextLine());
+		switch (menu) {
 			case 1: reserveRoom();		break;
 			case 2: showReservedRooms();		break;
 			case 3: cancelRoom();		break;
@@ -37,7 +37,10 @@ public class LectureRoomMain {
 	}
 	
 	static void reserveRoom() {
+		System.out.print("예약할 강의실 번호:");
+		String roomNo = sc.nextLine();
 		
+		System.out.println(roomNo + " 강의실 예약 완료");
 	}
 	
 	static void showReservedRooms() {
@@ -59,4 +62,5 @@ public class LectureRoomMain {
 	static void showRoomList() {
 		
 	}
+
 }
