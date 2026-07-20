@@ -19,6 +19,16 @@ public class PracticeRoom extends LectureRoom {
 		return equipment;
 	}
 	
-	
+	@Override
+	public void displayInfo() {
+	    System.out.println(
+	        "[실습강의실] " + getRoomNo()
+	        + ", 수용인원: " + getCapacity()
+	        + ", 위치: " + getLocation()
+	        + ", 관리부서: " + getDepartment()
+	        + ", 용도: " + purpose
+	        + ", 보유장비: " + equipment
+	    );
+	}
 
 }

@@ -54,5 +54,5 @@ public abstract class LectureRoom implements Reservable {
 		this.reserved = reserved;
 	}
 	
-	
+	public abstract void displayInfo();
 }
