@@ -39,9 +39,9 @@ public class LectureRoomMain {
 		System.out.print("예약할 강의실 번호: ");
 		String roomNo = sc.nextLine();
 		
-		for(LectureRoom room : roomList) {
-			if(room.getRoomNo().equals(roomNo)) {
-				room.reserve();
+		for(LectureRoom lr : roomList) {
+			if(lr.getRoomNo().equals(roomNo)) {
+				lr.reserve();
 				return;
 			}
 		}
@@ -50,13 +50,23 @@ public class LectureRoomMain {
 	public static void showReservedRooms() {
 		System.out.println("===== 예약 현황 =====");
 		
-		for(LectureRoom room : roomList) {
-			
+		for(LectureRoom lr : roomList) {
+			if(lr.isReserved()) {
+				lr.showReservation();
+			}
 		}
 	}
 	
 	public static void cancelRoom() {
+		System.out.print("취소할 강의실 번호: ");
+		String roomNo = sc.nextLine();
 		
+		for(LectureRoom lr : roomList) {
+			if(lr.getRoomNo().equals(roomNo)) {
+				lr.cancelReservation();
+				return;
+			}
+		}
 	}
 	
 	public static void addRoom() {
