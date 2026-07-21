@@ -36,11 +36,23 @@ public class LectureRoomMain {
 		}
 	}
 	public static void reserveRoom() {
+		System.out.print("예약할 강의실 번호: ");
+		String roomNo = sc.nextLine();
 		
+		for(LectureRoom room : roomList) {
+			if(room.getRoomNo().equals(roomNo)) {
+				room.reserve();
+				return;
+			}
+		}
 	}
 	
 	public static void showReservedRooms() {
+		System.out.println("===== 예약 현황 =====");
 		
+		for(LectureRoom room : roomList) {
+			
+		}
 	}
 	
 	public static void cancelRoom() {
