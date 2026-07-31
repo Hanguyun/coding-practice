@@ -1,6 +1,8 @@
+package BlackjackGame;
+
 import java.util.*;
 
-public class Blackjack3 {
+public class BlackjackGame {
 	static Scanner sc = new Scanner(System.in); // 사용자에게 입력 받을 Scanner 객체 생성
 	
 	static List<String> card = // 기본 카드를 리스트로 세팅
@@ -111,7 +113,7 @@ public class Blackjack3 {
 				}
 			}
 			while (!userBust) {
-				System.out.println("현재 당신의 패는 " + user + "입니다. 총합: " + userSum);
+				System.out.println("당신의 패는 " + user + "입니다. 총합: " + userSum);
 				System.out.print("카드를 더 뽑으시겠습니까? (Yes=1 No=0):");
 	
 				int keepGoing = sc.nextInt();
@@ -155,7 +157,7 @@ public class Blackjack3 {
 				}
 			}
 			
-			System.out.println("게임을 계속 하시겠습니까?(yes=1 no=0) :");
+			System.out.print("게임을 계속 하시겠습니까?(yes=1 no=0) :");
 			int game = sc.nextInt();
 			
 			if(game == 0) {
